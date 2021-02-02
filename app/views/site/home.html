@@ -1,0 +1,16 @@
+{% extends "site/master.html" %}
+
+{% block content %}
+
+<h2>Home</h2>
+
+{{message.message}}
+
+<ul>
+    
+    {% for user in users %}
+    <li>{{user.username}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
