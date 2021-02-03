@@ -3,15 +3,18 @@
 namespace app\controllers;
 
 use app\classes\Flash;
+use app\classes\Validate;
 use app\database\models\User;
 
 class Home extends Base
 {
     private $user;
+    private $validate;
 
     public function __construct()
     {
         $this->user = new User;
+        $this->validate = new Validate;
     }
 
     public function index($request, $response)
@@ -19,7 +22,12 @@ class Home extends Base
 
         $users = $this->user->find();
 
-        $message = Flash::get('message');
+        $this->validate->required(["username","email"])->exist($this->user,'email','intisar8251@uorak.com');
+
+        echo '<pre>$this->validate->getErrors()<br />'; var_export($this->validate->getErrors()); echo '</pre>';
+        exit;
+
+        // $message = Flash::get('message');
 
         // $deleted = $this->user->delete("id", 15);
         // echo '<pre>$deleted<br />'; var_dump($deleted); echo '</pre>'; exit;
@@ -45,7 +53,7 @@ class Home extends Base
         return $this->getTwig()->render($response, $this->setView('site/home'), [
             'title' => 'Home',
             'users' => $users,
-            'message'=> $message
+            // 'message'=> $message
         ]);
     }
 }
