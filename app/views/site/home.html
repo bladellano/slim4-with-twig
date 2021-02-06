@@ -4,12 +4,23 @@
 
 <h2>Home</h2>
 
-{{message.message}}
+{{messages.message.message|message(messages.message.alert)|raw}}
 
+<a href="/user/create" class="btn btn-primary">Create</a>
 <ul>
-    
+
     {% for user in users %}
-    <li>{{user.username}}</li>
+    <li>{{user.username}}
+        <a href="/user/edit/{{user.id}}" class="btn btn-warning">Editar</a>
+        
+        {% if logged_in %}
+        <form action="/user/delete/{{user.id}}" class="btn--inline" method="post">
+            <input type="hidden" name="_METHOD" value="DELETE">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?');">Deletar</button>
+        </form>
+        {% endif %}
+
+    </li>
     {% endfor %}
 </ul>
 

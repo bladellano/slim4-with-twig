@@ -17,7 +17,7 @@ $methodOverrideMiddleware = new MethodOverrideMiddleware();
 $app->add($methodOverrideMiddleware);
 
 //Trata rotas inexistentes
-$app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],'/{routes:.+}', function ($request, $response) {
+$app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function ($request, $response) {
     $response->getBody()->write("Something wrong");
     return $response;
 });

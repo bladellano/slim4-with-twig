@@ -14,6 +14,7 @@ class ComposerStaticInit419a3fd58544317974fc78480c028548
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '965269e33ae3130c9c273a783927bbc7' => __DIR__ . '/../..' . '/app/helpers/config.php',
         'ed059a989651f2deca345da1458efa52' => __DIR__ . '/../..' . '/app/helpers/redirect.php',
+        'f04517e4baf5b1b6ad6106f376f11429' => __DIR__ . '/../..' . '/app/helpers/twig_variables.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -433,8 +434,13 @@ class ComposerStaticInit419a3fd58544317974fc78480c028548
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'app\\classes\\Flash' => __DIR__ . '/../..' . '/app/classes/Flash.php',
+        'app\\classes\\Login' => __DIR__ . '/../..' . '/app/classes/Login.php',
+        'app\\classes\\TwigFilters' => __DIR__ . '/../..' . '/app/classes/TwigFilters.php',
+        'app\\classes\\TwigGlobal' => __DIR__ . '/../..' . '/app/classes/TwigGlobal.php',
+        'app\\classes\\Validate' => __DIR__ . '/../..' . '/app/classes/Validate.php',
         'app\\controllers\\Base' => __DIR__ . '/../..' . '/app/controllers/Base.php',
         'app\\controllers\\Home' => __DIR__ . '/../..' . '/app/controllers/Home.php',
+        'app\\controllers\\Login' => __DIR__ . '/../..' . '/app/controllers/Login.php',
         'app\\controllers\\User' => __DIR__ . '/../..' . '/app/controllers/User.php',
         'app\\database\\Connection' => __DIR__ . '/../..' . '/app/database/Connection.php',
         'app\\database\\models\\Base' => __DIR__ . '/../..' . '/app/database/models/Base.php',

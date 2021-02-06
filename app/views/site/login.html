@@ -1,0 +1,20 @@
+{% extends "site/master.html" %}
+
+{% block content %}
+
+<h2>Login</h2>
+
+
+<form action="/login" method="post">
+
+    <input class="form-control" type="text" name="email" placeholder="Seu e-mail">
+    {{messages.email.message|message(messages.email.alert)|raw}}
+    <br>
+    <input class="form-control" type="password" name="password">
+    {{messages.password.message|message(messages.password.alert)|raw}}
+    <br>
+    <button type="submit" class="btn btn-info" id="btn-create">Logar</button>
+
+</form>
+
+{% endblock %}

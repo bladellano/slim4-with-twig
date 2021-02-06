@@ -1,0 +1,29 @@
+{% extends "site/master.html" %}
+
+{% block content %}
+
+<h2>Edit</h2>
+
+{{messages.message.message|message(messages.message.alert)|raw}}
+
+<form action="/user/update/{{user.id}}" method="post">
+
+    <input type="hidden" name="_METHOD" value="PUT">
+
+    <input type="text" name="username" class="form-control" placeholder="Usuário" autocomplete="off" value="{{user.username}}">
+    {{messages.username.message|message(messages.username.alert)|raw}}<br />
+    <input type="text" name="firstname" class="form-control" placeholder="Primeiro Nome" autocomplete="off" value="{{user.firstname}}">
+    {{messages.firstname.message|message(messages.firstname.alert)|raw}}<br />
+    <input type="text" name="lastname" class="form-control" placeholder="Último Nome" autocomplete="off" value="{{user.lastname}}">
+    {{messages.lastname.message|message(messages.lastname.alert)|raw}}<br />
+    <input type="text" name="email" class="form-control" placeholder="E-mail" autocomplete="off" value="{{user.email}}">
+    {{messages.email.message|message(messages.email.alert)|raw}}<br />
+    <!-- <input type="password" name="password" class="form-control" autocomplete="off" value="{{user.password}}"> -->
+    <input type="password" name="password" class="form-control" autocomplete="off" value="123">
+    {{messages.password.message|message(messages.password.alert)|raw}}<br />
+
+    <hr>
+    <button type="submit" class="btn btn-secondary">Alterar</button>
+</form>
+
+{% endblock %}

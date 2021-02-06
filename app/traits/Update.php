@@ -10,6 +10,7 @@ trait Update
     public function update(array $updateFieldAndValues)
     {
         $fields = $updateFieldAndValues['fields'];
+        echo '<pre>  $fields<br />'; var_dump(  $fields); echo '</pre>';
         $where = $updateFieldAndValues['where'];
 
         $update_fields = '';

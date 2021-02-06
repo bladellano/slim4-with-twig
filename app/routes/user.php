@@ -2,7 +2,10 @@
 
 use app\controllers\User;
 
-$app->get('/user/create', User::class.":create");
-$app->post('/user/store', User::class.":store");
-$app->put('/user/update', User::class.":update");
-$app->delete('/user/delete', User::class.":destroy");
+require '../app/middlewares/logged.php';
+
+$app->get('/user/create', User::class . ":create")->add($logged);
+$app->get('/user/edit/{id}', User::class . ":edit")->add($logged);
+$app->post('/user/store', User::class . ":store");
+$app->put('/user/update/{id}', User::class . ":update");
+$app->delete('/user/delete/{id}', User::class . ":destroy");

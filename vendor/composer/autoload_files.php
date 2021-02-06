@@ -13,4 +13,5 @@ return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     '965269e33ae3130c9c273a783927bbc7' => $baseDir . '/app/helpers/config.php',
     'ed059a989651f2deca345da1458efa52' => $baseDir . '/app/helpers/redirect.php',
+    'f04517e4baf5b1b6ad6106f376f11429' => $baseDir . '/app/helpers/twig_variables.php',
 );
