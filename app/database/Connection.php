@@ -1,27 +1,30 @@
 <?php
 
 namespace app\database;
+
 use PDO;
 use PDOException;
 
 class Connection
 {
     private static $pdo = NULL;
-    
+
+    private static $DRIVER = DB_SITE['driver'];
+    private static $HOST = DB_SITE['host'];
+    private static $DBNAME = DB_SITE['dbname'];
+    private static $USER = DB_SITE['username'];
+    private static $PASSWD = DB_SITE['passwd'];
+    private static $OPTIONS = DB_SITE['options'];
+
     public static function connection()
     {
-        if(static::$pdo){
+        if (static::$pdo) {
             return static::$pdo;
         }
         try {
-            //PASSAR PARA CÁ CONSTANTES DO CONFIG FOCO
-            static::$pdo = new PDO("mysql:host=localhost;dbname=slim4","root","root",[
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
-            ]);
+            static::$pdo = new PDO("" . static::$DRIVER . ":host=" . static::$HOST . ";dbname=" . static::$DBNAME . "", static::$USER, static::$PASSWD, static::$OPTIONS);
 
             return static::$pdo;
-
         } catch (PDOException $e) {
             var_dump($e->getMessage());
         }
